@@ -76,11 +76,11 @@ AS d JOIN funcionarios AS f
 ON d.funcionario_id = f.funcionario_id
 WHERE f.primeiro_nome LIKE 'Jose%';
 
-select r.regiao_name,count(p.pais_id)
-from regiao as r join paises as p 
-where r.regiao_id = p.regiao_id 
-group by p.regiao_id
-order by count(p.pais_id) desc limit 1;
+SELECT r.regiao_name, COUNT (p.pais_id)
+FROM regiao AS r JOIN paises AS p 
+WHERE r.regiao_id = p.regiao_id 
+GROUP BY p.regiao_id
+ORDER BY COUNT (p.pais_id) DESC LIMIT 1;
 
 SELECT  f.funcionario_id, f.primeiro_nome, f.sobrenome, d.dependente_id, d.primeiro_nome, d.sobrenome FROM dependentes
 AS d JOIN funcionarios AS f
